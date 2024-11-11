@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>Form Barang</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
-<body>
+<body class = "p-3 mb-2 bg-dark text-white">
 <div class="container">
     <?php
     //Include file koneksi, untuk koneksikan ke database
-    include "koneksi.php";
+    include "database.php";
 
     //Fungsi untuk mencegah inputan karakter yang tidak sesuai
     function input($data) {
@@ -17,6 +17,7 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+   
     //Cek apakah ada kiriman form dari method post
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -24,6 +25,8 @@
         $stok=input($_POST["stok"]);
         $harga_beli=input($_POST["harga_beli"]);
         $harga_jual=input($_POST["harga_jual"]);
+        
+
 
         //Query input menginput data kedalam tabel anggota
         $sql="insert into tbl_barang (nama_barang,stok,harga_beli,harga_jual) values
@@ -32,14 +35,14 @@
         //Mengeksekusi/menjalankan query diatas
         $hasil=mysqli_query($kon,$sql);
 
-        //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
+    
         if ($hasil) {
-            header("Location:index.php");
+            echo "<div class='alert alert-success'>Data berhasil disimpan!</div>";
+            header("Location: index.php");
+        } else {
+            echo "<div class='alert alert-danger'>Data Gagal disimpan. Error: " . mysqli_error($kon) . "</div>";
         }
-        else {
-            echo "<div class='alert alert-danger'> Data Gagal disimpan.</div>";
-
-        }
+        
 
     }
     ?>
@@ -60,7 +63,6 @@
             <label>Harga Beli :</label>
             <input type="int" name="harga_beli" class="form-control" placeholder="Masukan Harga Beli" required/>
         </div>
-                </p>
         <div class="form-group">
             <label>Harga Jual:</label>
             <input type="int" name="harga_jual" class="form-control" placeholder="Masukan Harga Jual" required/>
