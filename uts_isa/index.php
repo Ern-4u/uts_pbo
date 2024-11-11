@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <title>
     Muhammad Isa Irawanto
 </title>
-<body>
+<body class = "p-3 mb-2 bg-dark text-white">
     <nav class="navbar">
-            <span class="navbar-brand">TUGAS UTS Muhammad Isa Irawanto</span>
-        </div>
+            <span class="navbar-brand">UTS Muhammad Isa Irawanto (42423049) </span>
     </nav>
 <div class="container">
-    <br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-    <h4><center>TABEL BARANG</center></h4>
+    <br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    <h4>TABEL BARANG</h4>
+    <br>
+    <p>
+    <a href="create.php" class="btn btn-primary" role="button">Tambah Data</a>
+    </p>
 <?php
 
-    require "koneksi.php";
+    require "database.php";
 
 
     //Cek apakah ada kiriman form dari method post
@@ -39,24 +43,22 @@
 ?>
 
 
-     <tr class="table-danger">
-            <br>
-        <thead>
-        <tr>
-       <table class="my-3 table table-bordered">
-            <tr class="table-primary">           
-            <th>No</th>
-            <th>Nama Barang</th>
-            <th>Stok</th>
-            <th>Harga Beli</th>
-            <th>Harga Jual</th>
-            <th colspan='2'>Aksi</th>
+    <table class="table-bordered" >
+        <thead class= "my-3 table table-bordered">
+            <tr class="bg-primary"> 
+                      
+                <th >No</th>
+                <th >Nama Barang</th>
+                <th >Stok</th>
+                <th >Harga Beli</th>
+                <th >Harga Jual</th>
+                <th >Aksi</th>
 
-        </tr>
+            </tr>
         </thead>
 
         <?php
-        require_once "koneksi.php";
+        require_once "database.php";
 
         $sql="select * from tbl_barang order by id_barang desc";
         
@@ -66,7 +68,7 @@
             $no++;
 
             ?>
-            <tbody>
+        <tbody>
             <tr>
                 <td><?php echo $no;?></td>
                 <td><?php echo $data["nama_barang"]; ?></td>
@@ -78,12 +80,11 @@
                     <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?id_barang=<?php echo $data['id_barang']; ?>" class="btn btn-danger" role="button">Delete</a>
                 </td>
             </tr>
-            </tbody>
+        </tbody>
             <?php
         }
         ?>
     </table>
-    <a href="create.php" class="btn btn-primary" role="button">Tambah Data</a>
 </div>
 </body>
 </html>
