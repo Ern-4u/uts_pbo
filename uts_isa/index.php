@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <title>
     Muhammad Isa Irawanto
 </title>
-<body class = "p-3 mb-2 bg-dark text-white">
-    <nav class="navbar">
-            <span class="navbar-brand">UTS Muhammad Isa Irawanto (42423049) </span>
-    </nav>
+<body class = "background">
+<div class="navbar">
+    <ul class="ul-navbar">
+        <li class="li-navbar">
+            <h1>UTS Muhammad Isa Irawanto</h1>
+        </li>
+    </ul>
+</div>
 <div class="container">
     <br>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
@@ -43,9 +48,9 @@
 ?>
 
 
-    <table class="table-bordered" >
-        <thead class= "my-3 table table-bordered">
-            <tr class="bg-primary"> 
+    <table class="table" >
+        <thead class= "thead">
+            <tr class="tr-table"> 
                       
                 <th >No</th>
                 <th >Nama Barang</th>
