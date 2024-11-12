@@ -1,0 +1,16 @@
+.navbar {
+  background-color: lightgray;
+}
+
+.background {
+  background-color: aliceblue;
+}
+
+.table {
+  border: 5px;
+  margin: 4px;
+}
+.li-navbar {
+  list-style-type: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
