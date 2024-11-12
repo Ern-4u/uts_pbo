@@ -2,9 +2,10 @@
 <html>
 <head>
     <title>Form Barang</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
-<body class = "p-3 mb-2 bg-dark text-white">
+<body class = "background">
 <div class="container">
     <?php
     //Include file koneksi, untuk koneksikan ke database
@@ -46,29 +47,40 @@
 
     }
     ?>
-    <h2>Input Data</h2>
+    <br>
+    <h2>
+        <center>Input Data</center>
+    </h2> 
+    <br>
+    <br>
+    
 
 
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-        <div class="form-group">
-            <label>Nama Barang:</label>
-            <input type="text" name="nama_barang" class="form-control" placeholder="Masukan Nama Barang" required />
-
+        <div class="form-group row">
+            <label for="colFormLabelSm" class="col-sm-2 col-form-label ">NAMA BARANG</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control " id="colFormLabel" placeholder="Masukan Nama Barang" required/>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Stok:</label>
-            <input type="int" name="stok" class="form-control" placeholder="Masukan Jumlah Stok Barang" required/>
+        <div class="form-group row">
+            <label for="colFormLabelSm" class="col-sm-2 col-form-label ">STOK</label>
+            <div class="col-sm-10">
+                <input type="int" class="form-control " id="colFormLabel" placeholder="Masukan Jumlah Stok Barang" required/>
+            </div>
         </div>
-       <div class="form-group">
-            <label>Harga Beli :</label>
-            <input type="int" name="harga_beli" class="form-control" placeholder="Masukan Harga Beli" required/>
+        <div class="form-group row">
+            <label for="colFormLabelSm" class="col-sm-2 col-form-label ">HARGA BELI</label>
+            <div class="col-sm-10">
+                <input type="int" class="form-control " id="colFormLabel" placeholder="Masukan Harga Beli" required/>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Harga Jual:</label>
-            <input type="int" name="harga_jual" class="form-control" placeholder="Masukan Harga Jual" required/>
+        <div class="form-group row">
+            <label for="colFormLabelSm" class="col-sm-2 col-form-label ">HARGA JUAL</label>
+            <div class="col-sm-10">
+                <input type="int" class="form-control " id="colFormLabel" placeholder="Masukan Harga jual" required/>
+            </div>
         </div>
-             
-
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
